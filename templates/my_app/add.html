@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block content %}
+    <div class="row">
+        <div class="col">
+            <h2 style="text-align: center">Add Item</h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col" align="center">
+            <form action="{% url 'todo_list:todo' %}" method="post">
+            {% csrf_token %}
+            <div class="form-group form-check">
+                <input type="text" class="add_item" name="add_item" id="add_item" placeholder="Just DO it...">
+            </div>
+                <button type="submit" class="btn btn-primary" name="action">Submit</button>
+            </form>
+        </div>
+    </div>
+{% endblock content %}
