@@ -1,0 +1,6 @@
+button, label{
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle;
+  margin: 5px 0;
+}
