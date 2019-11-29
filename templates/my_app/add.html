@@ -10,7 +10,7 @@
             <form action="{% url 'todo_list:todo' %}" method="post">
             {% csrf_token %}
             <div class="form-group form-check">
-                <input type="text" class="add_item" name="add_item" id="add_item" placeholder="Just DO it...">
+                <input type="text" class="add_item" name="add_item" id="add_item" placeholder="Just DO it..." style="width: 300px;">
             </div>
                 <button type="submit" class="btn btn-primary" name="action">Submit</button>
             </form>

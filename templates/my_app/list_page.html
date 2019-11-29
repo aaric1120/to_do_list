@@ -1,16 +1,23 @@
 {% extends "base.html" %}
 {% block content %}
 <h2 style="text-align: center; margin-bottom: 2cm;">Current ToDoList</h2>
-{% for item in final_postings %}
+
     <div class="row">
         <div class="col-sm" style="text-align: center;margin-bottom: 1cm;">
-            <form action="{% url 'todo_list:todo' %}" method="post">
-            {% csrf_token %}
-                <label class="todoitem" >{{item.1}}</label>
-                <button type="submit" class="btn btn-primary" name="action" value="{{item.0}}">X</button>
-            </form>
-
+            <ul class="list-group">
+                {% for item in final_postings %}
+                <li class="list-group-item">
+                    <form action="{% url 'todo_list:todo' %}" method="post">
+                    {% csrf_token %}
+                        <label class="todoitem" >{{item.1}}</label>
+                        <div class="float-right">
+                        <button type="submit" class="btn btn-danger" name="action" value="{{item.0}}">X</button>
+                        </div>
+                    </form>
+                </li>
+                {% endfor %}
+            </ul>
         </div>
     </div>
-{% endfor %}
+
 {% endblock content %}
