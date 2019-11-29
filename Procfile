@@ -1,1 +1,1 @@
-web: gunicorn craiglist_app.wsgi
+web: gunicorn to_do_list.wsgi
